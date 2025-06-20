@@ -39,7 +39,7 @@ public class CoffeeApiController {
         Coffee coffee = dto.toEntity();
         log.info("id : {}, coffee : {}", id, coffee.toString());
         Coffee target = coffeeRepository.findById(id).orElse(null);
-        if (target == null || id != target.getId()) {
+        if (target == null || id != coffee.getId()) {
             log.error("잘못된 요청! id : {}, coffee : {}", id, coffee.toString());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
