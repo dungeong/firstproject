@@ -27,6 +27,9 @@ public class CoffeeService {
 
     public Coffee create(CoffeeDto dto) {
         Coffee coffee = dto.toEntity();
+        if (coffee.getId() != null) {
+            return null;
+        }
         return coffeeRepository.save(coffee);
     }
 

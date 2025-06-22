@@ -26,8 +26,11 @@ public class ArticleService {
     }
 
     public Article create(ArticleForm dto) {
-        Article created = dto.toEntity();       // dto -> 엔티티로 변환한 후 article에 저장
-        return articleRepository.save(created); // article을 DB에 저장
+        Article article = dto.toEntity();       // dto -> 엔티티로 변환한 후 article에 저장
+        if (article.getId() != null) {
+            return null;
+        }
+        return articleRepository.save(article); // article을 DB에 저장
     }
 
     public Article update(Long id, ArticleForm dto) {
