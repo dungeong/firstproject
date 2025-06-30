@@ -19,7 +19,7 @@ class CommentRepositoryTest {
     CommentRepository commentRepository;        // commentRepository 객체 주입
 
     @Test
-    @DisplayName("특정 게시그의 모든 댓글 조회")
+    @DisplayName("특정 게시글의 모든 댓글 조회")
     void findByArticle() {
         /* Case 1 : 4번 게시글의 모든 댓글 조회 */
         {
